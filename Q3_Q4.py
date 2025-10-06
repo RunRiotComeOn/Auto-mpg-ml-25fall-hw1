@@ -43,7 +43,7 @@ class SinglePolyRegression:
 
 def main():
     df = pd.read_csv("./auto-mpg/auto-mpg-clean.csv")
-    df.drop(columns='car name', inplace=X_train_all_feature)
+    df.drop(columns='car name', inplace=True)
 
     # Split train and test sets
     n_train = 292
