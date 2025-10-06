@@ -37,7 +37,7 @@ def question_6():
     y_test = df.iloc[n_train:]['mpg_category'].values
     
     # Train Logistic Regression and predict
-    model = LogisticRegression(max_iter=1000, random_state=42)
+    model = LogisticRegression(max_iter=100000, random_state=42)
     model.fit(X_train, y_train)
     
     y_train_pred = model.predict(X_train)
@@ -58,7 +58,7 @@ def question_6():
     cm = confusion_matrix(y_test, y_test_pred)
     print(cm)
 
-    with open('logistic_regression_model.pkl', 'wb') as f:
+    with open('./ckpts/logistic_regression_model.pkl', 'wb') as f:
         pickle.dump(model, f)
     
     return X_train, X_test, y_train, y_test
